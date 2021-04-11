@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    float k1,k2,k3,v;
+	    cin>>k1>>k2>>k3>>v;
+	    float factor=k1*k2*k3*v;
+	    //cout<<factor<<endl;
+	    factor=100/factor;
+	    float f=(int)(factor * 100 +0.5);
+	    float ans=f/100.00;
+	    //cout<<ans<<endl;
+	    if(ans*100>=958)
+	        cout<<"no"<<endl;
+	    else
+	        cout<<"yes"<<endl;
+	}
+	return 0;
+}

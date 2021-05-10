@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long int t;
+	cin>>t;
+	while(t--)
+	{
+	    long long int n,x,k;
+	    cin>>n>>x>>k;
+	    bool ans=0;
+	    long long int b=n+1;
+	    if(x%k==0)
+	        ans=1;
+	    else
+	        ans=0;
+	    if(ans==0)
+	    {
+	        if((b-x)%k==0)
+	            ans=1;
+	        else
+	            ans=0;
+	    }
+	    if(ans==0)
+	        cout<<"no"<<endl;
+	    else
+	        cout<<"yes"<<endl;
+	}
+	return 0;
+}

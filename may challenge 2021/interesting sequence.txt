@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int gcd(int a,int b)
+{
+    if (a == 0)
+        return b;
+    return gcd(b % a, a);
+}
+int main() {
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    long long int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int k;
+        cin>>k;
+        long long int size=2*k+1;
+        long long int arr[2*k+1],count=1;
+        for(long long int i=0;i<size;i++)
+        {
+            arr[i]=k+count*count;
+            count++;
+        }
+        long long int sum=0;
+        for(long long int i=1;i<size;i++)
+        {
+            sum+=gcd(arr[i-1],arr[i]);
+        }
+        cout<<sum<<endl;
+    }
+	return 0;
+}

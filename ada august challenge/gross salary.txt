@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    float ans=0;
+	    if(n<1500)
+	    {
+	        ans=n+(n/10.0)+((9.0*n)/10.0);
+	    }
+	    else{
+	        ans=n+500+(98*n)/100.0;
+	    }
+        printf("%.2f\n",ans);
+	}
+	return 0;
+}

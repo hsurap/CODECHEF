@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    string s;
+	    cin>>s;
+	    int i=1;
+	    int c1=0,c2=0;
+	    if(s.size()==1||s.size()==0)
+	    {
+	        cout<<0<<endl;
+	    }
+	    else{
+	        while(i<=s.size())
+    	    {
+    	        if(i==s.size())
+    	        {
+    	            if(s[i-1]=='U')
+    	                c1++;
+    	            else
+    	                c2++;
+    	           i++;
+    	        }
+    	        else if(s[i]==s[i-1])
+    	            i++;
+    	        else{
+    	            if(s[i-1]=='U')
+    	                c1++;
+    	            else
+    	                c2++;
+    	           i++;
+    	        }
+    	    }
+    	    //cout<<c1<<" "<<c2<<endl;
+    	    cout<<min(c1,c2)<<endl;
+	    }
+	}
+	return 0;
+}

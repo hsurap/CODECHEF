@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int n,k,s;
+        cin>>n>>k>>s;
+        long long int ans = ceil((k*s)/(n*1.0));
+        int cond = s-(s/7);
+        if(ans<=cond)
+            cout<<ans<<endl;
+        else
+            cout<<-1<<endl;
+    }
+}

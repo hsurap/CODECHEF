@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;cin>>n;
+	    int a[n];
+	    int maxx=-1;
+	    for(int i=0;i<n;i++)
+	    {
+	        cin>>a[i];
+	        maxx=max(maxx,a[i]);
+	    }
+	    int b[maxx+1]={0};
+	    for(int i=0;i<n;i++)
+	    {
+	        b[a[i]]++;
+	    }
+	    int no1=-1,no2=-1;
+	    for(int i=maxx;i>=0;i--)
+	    {
+	        if(b[i]>=2)
+	        {
+	            no1=i;
+	            b[i]=b[i]-2;
+	            break;
+	        }
+	    }
+	    for(int i=maxx;i>=0;i--)
+	    {
+	        if(b[i]>=2)
+	        {
+	            no2=i;
+	            b[i]=b[i]-2;
+	            break;
+	        }
+	    }
+	   // cout<<no1<<" "<<no2<<endl;
+	   if(no1>0 && no2>0)
+	   {
+	       cout<<no1*no2<<endl;
+	   }
+	   else{
+	       cout<<-1<<endl;
+	   }
+	}
+	return 0;
+}

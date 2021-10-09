@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,k;
+	    cin>>n>>k;
+	    if(n-k==1)
+	    {
+	        cout<<-1<<endl;
+	    }
+	    else{
+	        for(int i=1;i<=k;i++)
+	        {
+	            cout<<i<<" ";
+	        }
+	        bool ans=false;
+	        for(int i=k+1;i<=n;)
+	        {
+	            if(n-i==2)
+	            {
+	                ans=true;
+	                break;
+	            }
+	            int k=i;
+	            if(k<=n)
+	                cout<<i+1<<" ";
+	            k++;
+	            if(k<=n)
+	                cout<<i<<" ";
+	            
+	            i+=2;
+	        }
+	        if(ans==true)
+	        {
+	            cout<<n<<" "<<n-2<<" "<<n-1<<" ";
+	        }
+	        
+	        cout<<endl;
+	    }
+	    
+	}
+	return 0;
+}

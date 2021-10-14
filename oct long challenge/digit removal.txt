@@ -1,0 +1,60 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+long long int changing_last_digit(long long int n,long long int d)
+{
+    int count=0;
+    bool check=false;
+    long long int sum=0;
+    while(n>0)
+    {
+        int rem=n%10;
+        if(rem == d)
+        {
+            check=true;
+            break;
+        }
+        // cout<<"hello"<<" ";
+        sum=sum+rem*pow(10,count);
+        count++;
+        n=n/10;
+    }
+    // cout<<"-----";
+    // cout<<sum<<" ";
+    // cout<<"-----";
+    if(check==true)
+        return pow(10,count)-sum;
+    else
+        return 0;
+}
+
+void solve(long long int n,long long int d,long long int ans)
+{
+    long long int small_no=changing_last_digit(n,d);
+    // cout<<small_no<<" ";
+    if(small_no==0)
+    {
+        cout<<ans<<endl;
+        return;
+    }
+   
+    else{
+        ans+=small_no;
+        long long int new_no=n+small_no;
+        solve(new_no,d,ans);
+    }
+}
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    long long int n,d;
+	    cin>>n>>d;
+	    long long int ans=0;
+	    solve(n,d,ans);
+	}
+	return 0;
+}

@@ -1,0 +1,61 @@
+#include<bits/stdc++.h>
+#define int long long
+using namespace std;
+
+
+
+int32_t main(){
+
+    int t;
+    cin>>t;
+    while(t--){
+
+        int n,a, b;
+        cin>>n>>a>>b;
+        int even = 0;
+        int odd = 0;
+        while ( (n & 1) == 0)
+        {
+            n = n/2;
+            even++;
+        }
+        for (int i = 3; i <= sqrt(n); i = i + 2)
+        {
+            while (n% i == 0)
+            {
+                n = n/i;
+                odd++;
+            }
+        }
+
+        if(n >=3)
+            odd++;
+        if(a >-1 && b >-1)
+        {
+            cout<< even*a + odd*b<<endl;
+        }
+        else if(a >-1 && b <=-1)
+        {
+            if(even > 0 )
+                cout<< even*a <<endl;
+            else
+                cout<<b<<endl;
+        }
+        else if(a < 0 && b >= 0)
+        {
+            if(even > 0)
+                cout<< a + b*odd <<endl;
+            else
+                cout<<b*odd<<endl;
+        }
+        else
+        {
+            if(odd == 0)
+                cout<<a<<endl;
+            else if(even == 0)
+                cout<<b<<endl;
+            else
+                cout<<a<<endl;
+        }
+    }
+}

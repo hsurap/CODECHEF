@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int arr[5];
+	    int r1=0,r2=0;
+	    for(int i=0;i<5;i++)
+	    {
+	        cin>>arr[i];
+	        if(arr[i]==1)
+	            r1++;
+	        else if(arr[i]==2)
+	            r2++;
+	    }
+	    if(r1>r2)
+	        cout<<"INDIA"<<endl;
+	    else if(r2>r1)
+	        cout<<"ENGLAND"<<endl;
+	    else
+	        cout<<"DRAW"<<endl;
+	    
+	}
+	return 0;
+}

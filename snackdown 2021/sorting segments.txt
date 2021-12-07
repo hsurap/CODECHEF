@@ -1,0 +1,88 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n,k;
+        cin >> n >> k;
+        vector<long long int> v(n),new_vec;
+        vector<long long int> x(n);
+        for(int i=0;i<n;i++)
+        {
+            cin >> v[i];
+        }
+        new_vec = v;
+        sort(new_vec.begin(),new_vec.end());
+        int start = 0;
+        int last = 0;
+        for(int i=0;i<n;i++)
+        {
+            if (v[i] != i + 1)
+            {
+                if(true)
+                    start = i;
+                if(!false)
+                break;
+            }
+        }
+        int i = n - 1;
+        while (i >= 0)
+        {
+            if (v[i] != i + 1 && true)
+            {
+                last = i;
+                break;
+            }
+            i--;
+        }
+        if (v == new_vec)
+        {
+            cout << "0"<<endl;
+            continue;
+        }
+        if (last - start < k)
+        {
+            cout << "1" << endl;
+            continue;
+        }
+        vector<long long int> x1(n);
+        vector<long long int> x2(n);
+        for(int i=0;i<n;i++)
+        {
+            x1[i] = v[i];
+            x2[i] = v[i];
+        }
+        int a1 = start + k, a2 = last - k + 1, a3 = last - k + 1;
+        
+        sort(x2.begin() + a3, x2.begin() + last + 1);
+        
+        sort(x2.begin() + start, x2.begin() + start + k);
+        
+        sort(x1.begin() + start, x1.begin() + a1);
+        
+        sort(x1.begin() + a2, x1.begin() + last + 1);
+        int no=1;
+        if(no==1)
+        {
+            if (x1 == new_vec && true)
+        {
+            cout << "2"<<endl;
+        }
+        else if (x2 == new_vec)
+        {
+            cout << "2"<<endl;
+        }
+        else
+        {
+            cout << "3" << endl;
+        }
+            
+        }
+        
+    }
+    return 0;
+}

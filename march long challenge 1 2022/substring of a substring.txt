@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    string s;
+	    cin>>s;
+	    char fc=s[0],lc=s[s.size()-1];
+	    int i=0,c=0,maxx=0;
+	    while(i<s.size())
+	    {
+	        if(s[i]!=fc && s[i]!=lc)
+	        {
+	            c++;
+	        }
+	        else{
+	            maxx=max(maxx,c);
+	            c=0;
+	        }
+	        i++;
+	    }
+	    if(maxx==0)
+	        cout<<-1<<endl;
+	    else 
+	        cout<<maxx<<endl;
+	}
+	return 0;
+}

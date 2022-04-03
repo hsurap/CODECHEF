@@ -1,0 +1,16 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int no;
+	    cin>>no;
+	    int a=(no/2)+1;
+	    cout<<a<<endl;
+	}
+	return 0;
+}

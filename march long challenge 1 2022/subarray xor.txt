@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long int t;
+	cin>>t;
+	long long int M=998244353;
+	while(t--)
+	{
+	    long long int n;
+	    cin>>n;
+	    string s;
+	    cin>>s;
+	    long long int ans=0;
+	    for(long long int i=0;i<s.size();i++)
+	    {
+	       // cout<<"hello"<<" "<<endl;
+	        int no;
+	        if(s[i]=='1')
+	            no=1;
+	        else
+	            no=0;
+	        ans=((ans^no)%M);
+	       // cout<<ans<<endl;
+	        for(long long int j=i+1;j<s.size();j++)
+	        {
+                // cout<<"hello"<<" "<<endl;
+                if(s[j]=='1')
+                    no=(no*2)+1;
+                else
+                    no=(no*2);
+	            
+	            ans=(ans^no)%M; 
+	           // cout<<ans<<endl;
+	        }
+	    }
+	    cout<<ans<<endl;
+	}
+	return 0;
+}

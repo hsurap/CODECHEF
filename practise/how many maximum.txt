@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // your code goes here
+    int T;
+    cin>>T;
+
+    while(T--)
+    {
+        int N;
+        cin>>N;
+        int sl=N-1;
+        int k;
+        int ans=0;
+        string s;
+        cin>>s;
+        // cout<<s<<endl;
+        if(sl==1)
+            ans+=1;
+        if(sl!=1 && s[0]=='1')
+        {
+            ans=ans+1;
+            // cout<<"increament here"<<endl;
+        }
+        if(sl!=1 &&  s[sl-1]=='0' )
+        {
+            ans=ans+1;
+            // cout<<"increament here1"<<endl;
+        }
+        for(int i=1;i<sl-1;i++)
+        {
+            if(s[i]=='0' && s[i+1]=='1' ){
+                    ans=ans+1;
+                   // cout<<"increament here2"<<endl;
+                }
+            }
+            cout<<ans<<endl;
+
+        }
+
+
+    return 0;
+}
